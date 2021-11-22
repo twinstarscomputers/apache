@@ -4,7 +4,7 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-madhan')
-		key = value
+		key = 'value'
 		
 	}
 
