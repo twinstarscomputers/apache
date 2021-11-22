@@ -12,6 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
+				sh 'chmod 777 httpd-foreground'
 				sh 'docker build -t sm0961/alpha:v2 .'
 			}
 		}
