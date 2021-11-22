@@ -4,7 +4,7 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-madhan')
-		key = 'value'
+		key = 'version'
 		
 	}
 
@@ -13,7 +13,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t sm0961/alpha:$value .'
+				sh 'docker build -t sm0961/alpha:$key .'
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha:$value'
+				sh 'docker push sm0961/alpha:$key'
 			}
 		}
 	}
