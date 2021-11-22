@@ -229,9 +229,8 @@ RUN set -eux; \
 
 # https://httpd.apache.org/docs/2.4/stopping.html#gracefulstop
 STOPSIGNAL SIGWINCH
-
-COPY httpd-foreground /usr/local/bin/
 RUN rm -rf /usr/local/apache2/htdocs/index.html
+COPY httpd-foreground /usr/local/bin/
 COPY yammoe /usr/local/apache2/htdocs/
 EXPOSE 80
 CMD ["httpd-foreground"]
