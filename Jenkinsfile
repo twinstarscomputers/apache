@@ -13,7 +13,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t sm0961/alpha:$key .'
+				sh 'docker build -t sm0961/alpha:v9 .'
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha:$key'
+				sh 'docker push sm0961/alpha:v9'
 			}
 		}
 	}
