@@ -4,6 +4,7 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-madhan')
+		${packageType}
 		
 	}
 
@@ -12,7 +13,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t sm0961/alpha:v2 .'
+				sh 'docker build -t sm0961/alpha:${packageType} .'
 			}
 		}
 
@@ -26,7 +27,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha:v2'
+				sh 'docker push sm0961/alpha:${packageType}'
 			}
 		}
 	}
