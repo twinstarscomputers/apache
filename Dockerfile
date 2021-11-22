@@ -232,5 +232,6 @@ STOPSIGNAL SIGWINCH
 RUN rm -rf /usr/local/apache2/htdocs/index.html
 COPY httpd-foreground /usr/local/bin/
 COPY yammoe /usr/local/apache2/htdocs/
+#permission added
 EXPOSE 80
 CMD ["httpd-foreground"]
