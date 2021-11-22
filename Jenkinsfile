@@ -4,7 +4,7 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-madhan')
-		key = 'BUILS_VERSION'
+		key = 'BUILD_VERSION'
 		
 	}
 
