@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t sm0961/alpha:v1 .'
+				sh 'docker build -t sm0961/alpha:v2 .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha:v1'
+				sh 'docker push sm0961/alpha:v2'
 			}
 		}
 	}
