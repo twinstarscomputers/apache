@@ -13,7 +13,7 @@ pipeline{
 
 			steps {
 				sh 'chmod 777 httpd-foreground'
-				sh 'docker build -t sm0961/alpha:v2 .'
+				sh 'docker build -t sm0961/alpha:{BUILD_VERSION} .'
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha:v2'
+				sh 'docker push sm0961/alpha:{BUILD_VERSION}'
 			}
 		}
 	}
