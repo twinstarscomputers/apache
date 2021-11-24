@@ -13,7 +13,7 @@ pipeline{
 
 			steps {
 				sh 'chmod 777 httpd-foreground'
-				sh 'docker build -t sm0961/alpha .'
+				sh 'docker build -t sm0961/alpha:$tag .'
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sm0961/alpha'
+				sh 'docker push sm0961/alpha:$tag'
 			}
 		}
 	}
