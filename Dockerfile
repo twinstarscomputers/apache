@@ -233,7 +233,7 @@ STOPSIGNAL SIGWINCH
 RUN rm -rf /usr/local/apache2/htdocs/index.html
 COPY httpd-foreground /usr/local/bin/
 #COPY yammoe /usr/local/apache2/htdocs/
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page271/$version /usr/local/apache2/htdocs/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page271/$version.zip /usr/local/apache2/htdocs/
 #permission added
 EXPOSE 80
 CMD ["httpd-foreground"]
