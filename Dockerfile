@@ -4,6 +4,7 @@ FROM debian:bullseye-slim
 #RUN groupadd -r www-data && useradd -r --create-home -g www-data www-data
 
 ENV HTTPD_PREFIX /usr/local/apache2
+ENV version $tag
 ENV PATH $HTTPD_PREFIX/bin:$PATH
 RUN mkdir -p "$HTTPD_PREFIX" \
 	&& chown www-data:www-data "$HTTPD_PREFIX"
@@ -231,7 +232,8 @@ RUN set -eux; \
 STOPSIGNAL SIGWINCH
 RUN rm -rf /usr/local/apache2/htdocs/index.html
 COPY httpd-foreground /usr/local/bin/
-COPY yammoe /usr/local/apache2/htdocs/
+#COPY yammoe /usr/local/apache2/htdocs/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page271/$version /usr/local/apache2/htdocs/
 #permission added
 EXPOSE 80
 CMD ["httpd-foreground"]
